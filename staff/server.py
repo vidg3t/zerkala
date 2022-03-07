@@ -46,12 +46,4 @@ def generate():
     # time.sleep(0.1)
     return ({"text":rand_string})
 
-
-
-
-
-
-
-
-
 app.run(debug=True)
