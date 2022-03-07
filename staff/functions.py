@@ -1,5 +1,8 @@
 import sqlite3
 import os
+from datetime import datetime
+import pytz
+from pathlib import Path
 
 def add_info(name, phone):
         db = sqlite3.connect('base.db')
@@ -7,7 +10,8 @@ def add_info(name, phone):
 
         sql.execute('''CREATE TABLE IF NOT EXISTS users(
                 full_name TEXT,
-                phone_number TEXT
+                phone_number TEXT,
+                creation_time TEXT
         )''')
 
         db.commit()
@@ -24,7 +28,7 @@ def add_info(name, phone):
         #print(phone)
         sql.execute(f"SELECT phone_number FROM users WHERE phone_number = {phone}")
         if sql.fetchone() is None:
-                sql.execute(f"INSERT INTO users VALUES(?,?)", (name, phone))
+                sql.execute(f"INSERT INTO users VALUES(?,?,?)", (name, phone, str(datetime.now(pytz.timezone('Europe/Moscow'))).split('.')[0]))
                 db.commit()
 
 def remove_oldest():
@@ -40,4 +44,3 @@ def remove_oldest():
                                 os.remove(f'../returns/{min}')
                         except FileNotFoundError:
                                 break
-
