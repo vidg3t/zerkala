@@ -35,10 +35,8 @@ def remove_oldest():
                         min = file
         while True:
                 #os.remove(f'remdir/{min}')
-                if f'remdir/{min}' in os.listdir('remdir'):
-                        print(True)
-                        break
                 try:
                         os.remove(f'remdir/{min}')
                 except FileNotFoundError:
                         break
+
