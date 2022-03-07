@@ -42,5 +42,3 @@ def remove_oldest():
                         os.remove(f'remdir/{min}')
                 except FileNotFoundError:
                         break
-
-remove_oldest()
