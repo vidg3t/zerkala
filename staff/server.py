@@ -1,3 +1,4 @@
+import py_compile
 import flask
 from flask import Flask
 from flask import jsonify, Request
@@ -6,6 +7,7 @@ import requests
 import json
 import time
 import random
+import functions
 import string
 import math
 def generator():
@@ -25,6 +27,8 @@ headers = {
 @app.route('/newClient/<name>&&<phone>')
 def search_city(name,phone):
     print(name,phone)
+    functions.add_info(name,phone)
+    functions.remove_oldest()
     return ({"name":name,"phone":phone})
 @app.route("/newClient/generate")
 def generate():
@@ -38,6 +42,7 @@ def generate():
     x.close()
     g.close()
     print(rand_string)
+    
     # time.sleep(0.1)
     return ({"text":rand_string})
 
