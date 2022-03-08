@@ -1,14 +1,43 @@
 .hidden{
     display: none!important;
 }
-.regist_r{
+@font-face {
+    font-family: "Fredoka"; 
+    src: url("Fredoka.ttf") format("truetype"); 
+    font-style: normal; 
+    font-weight: normal; 
+    } 
+.cho_se{
+    display: block;
+}
+.uslugi{
+    display: block;
+}
+.regist_r {
     display: block;
     position: fixed;
-    top:10%;
-    left:10%;
+    top: 10%;
+    left: 10%;
     width: 80%;
-    height: 80%;
+    background-color: white;
+    height: 514px;
+    border: 1px solid black;
+    padding-left: 20px;
+    padding-right: 20px;
     z-index: 1000;
+    font-family: Fredoka;
+}
+.reg {
+    display: block;
+    color: #265478;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin: 10px 0;
+    margin-left: -47px;
+    margin-bottom: 25px;
+    padding: 0 15px;
+    position: relative;
+    padding-left: 70px;
 }
 .register_input {
     display: block;
@@ -16,17 +45,28 @@
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 15px;
+    margin-bottom: 20px;
     border: solid gray 1px;
 }
-.sending{text-align: center;
+
+.sending {
+    text-align: center;
     padding: 10px;
     padding-left: 30px;
     padding-right: 30px;
     background: brown;
     display: inline-block;
-    margin-left: 43%;
+    /* margin-left: 43%; */
     color: white;
-    font-size: 10px;}
+    font-size: 10px;
+    width: 100%;
+    font-size: 15px;
+}
+.zerkal_article{
+    margin-top: 0px;
+    margin-bottom: 10px;
+    display: block;
+}
 .wrong_input{
     color: red;
     font-size: 10px;

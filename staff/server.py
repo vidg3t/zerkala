@@ -36,8 +36,8 @@ headers = {
         'X-Authorization-Token' : '05eaca80d8fbc53660329ccc6ce97b3da3823788'
     }
 
-@app.route('/newClient/<name>&&<phone>')
-def search_city(name,phone):
+@app.route('/newClient/<name>&&<phone>&&<usluga>&&<date>')
+def search_city(name,phone,usluga,date):
     print(name,phone)
     functions.add_info(name,phone)
     functions.remove_oldest()
@@ -67,4 +67,4 @@ def generate():
 
 
 
-app.run(debug=True,host="195.2.74.124")
+app.run(debug=True),host="195.2.74.124")

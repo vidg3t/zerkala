@@ -15,3 +15,23 @@ function checkphone(phone) {
     return false
     }
     }
+function checks(uslugi,date){
+    let is_all_ok=true
+    if (uslugi!="none"){
+        document.getElementById("wrong_uslugi").classList.add("hidden");
+    }
+    else{
+        document.getElementById("wrong_uslugi").classList.remove("hidden");
+        is_all_ok=false;
+    }
+    if (date!=""){
+        document.getElementById("wrong_date").classList.add("hidden");
+
+    }
+    else{
+        document.getElementById("wrong_date").classList.remove("hidden");
+        is_all_ok=false;
+
+    }
+    return(is_all_ok)
+}
