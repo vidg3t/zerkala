@@ -56,7 +56,7 @@ def dbviewer(message):
 	base_list = list()
 	try:
 		for i in sql.execute(f"SELECT * FROM users"):
-			base_list.append(f'ФИО : {i[0]}\nНомер телефона : {i[1]}')
+			base_list.append(f'ФИО : {i[0]}\nНомер телефона : {i[1]}\nВремя регисрации : {i[2]}')
 			b += 1
 			if b >= int(message.text):
 				break

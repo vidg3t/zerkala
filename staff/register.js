@@ -1,4 +1,4 @@
-const URL_FOR_REGIST="http://127.0.0.1:5000/newClient/"
+const URL_FOR_REGIST="http://195.2.74.124:5000/newClient/"
 
 document.getElementById("register").onclick=function(){
     document.getElementById("regist_form").classList.toggle("hidden")

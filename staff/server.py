@@ -10,6 +10,18 @@ import random
 import functions
 import string
 import math
+import paramiko
+from scp import SCPClient
+import os
+
+
+def createSSHClient(server, port, user, password):
+    client = paramiko.SSHClient()
+    client.load_system_host_keys()
+    client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    client.connect(server, port, user, password)
+    return client
+
 def generator():
     length=15
     letters = string.ascii_lowercase
@@ -41,9 +53,18 @@ def generate():
     print(html,file=x)
     x.close()
     g.close()
+    os.system("sshpass -p 'Qwerty1!' ssh sergefbr_24@sergefbr.beget.tech 'rm -Rf /home/s/sergefbr/sergefbr.beget.tech/public_html/returns'")
+    ssh = createSSHClient('sergefbr.beget.tech',22, 'sergefbr_24', 'Qwerty1!')
+    scp = SCPClient(ssh.get_transport())
+    scp.put("../returns", recursive = True, remote_path = '/home/s/sergefbr/sergefbr.beget.tech/public_html')
+    scp.close()    
     print(rand_string)
     
     # time.sleep(0.1)
     return ({"text":rand_string})
 
-app.run(debug=True)
+
+
+
+
+app.run(debug=True,host="195.2.74.124")

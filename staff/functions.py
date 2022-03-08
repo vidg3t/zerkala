@@ -44,3 +44,20 @@ def remove_oldest():
                                 os.remove(f'../returns/{min}')
                         except FileNotFoundError:
                                 break
+        # directory = os.path.abspath('base.db').split('/')
+        # directory.remove(directory[-1])
+        # directory[-1] = 'returns'
+        # directory = '/'.join(directory)
+        # original_list = len(os.listdir(directory))
+        # if original_list>5:
+        #         min = os.listdir(directory)[0]
+        #         for file in os.listdir(directory):
+        #                 if os.stat(f'{directory}/{file}').st_ctime < os.stat(f'{directory}/{min}').st_ctime:
+        #                         min = file
+        #         while True:
+        #                 #os.remove(f'remdir/{min}')
+        #                 try:
+        #                         os.remove(f'{directory}/{min}')
+        #                 except FileNotFoundError:
+        #                         break
+
