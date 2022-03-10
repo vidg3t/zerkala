@@ -36,10 +36,10 @@ headers = {
         'X-Authorization-Token' : '05eaca80d8fbc53660329ccc6ce97b3da3823788'
     }
 
-@app.route('/newClient/<name>&&<phone>&&<service>&&<date>')
-def search_city(name,phone,service,date):
+@app.route('/newClient/<name>&&<phone>&&<service>&&<date>&&<comment>')
+def search_city(name,phone,service,date,comment):
     print(name,phone)
-    functions.add_info(name,phone,service,date)
+    functions.add_info(name,phone,service,date,comment)
     functions.remove_oldest()
     return ({"name":name,"phone":phone})
 @app.route("/newClient/generate")
@@ -62,9 +62,5 @@ def generate():
     
     # time.sleep(0.1)
     return ({"text":rand_string})
-
-
-
-
 
 app.run(debug=True,host="195.2.74.124")
